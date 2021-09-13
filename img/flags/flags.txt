@@ -1,0 +1,53 @@
+<option>algerian dinar (DZD)</option>
+<option>armenian dram (AMD)</option>
+<option>australian dollar (AUD)</option>
+<option>azerbaijani manat (AZN)</option>
+<option>bangladeshi taka (BDT)</option>
+<option>belarusian ruble (BYN)</option>
+<option>brazilian real (BRL)</option>
+<option>bulgarian lev (BGN)</option>
+<option>canadian dollar (CAD)</option>
+<option>croatian kuna (HRK)</option>
+<option>denmark krone (DKK)</option>
+<option>egyptian pound (EGP)</option>
+<option>euro (EUR)</option>
+<option>georgian lari (GEL)</option>
+<option>ghanaian cedi (GHS)</option>
+<option>hong kong dollar (HKD)</option>
+<option>hungarian forint (HUF)</option>
+<option>indian rupee (INR)</option>
+<option>indonesian rupiah (IDR)</option>
+<option>iranian rial (IRR)</option>
+<option>iraqi dinar (IQD)</option>
+<option>israeli new shekel (ILS)</option>
+<option>japanese yen (JPY)</option>
+<option>kazakhstani tenge (KZT)</option>
+<option>kyrgyzstani som (KGS)</option>
+<option>lebanese pound (LBP)</option>
+<option>libyan dinar (LYD)</option>
+<option>malaysian ringgit (MYR)</option>
+<option>mexican peso (MXN)</option>
+<option>moldovan leu (MDL)</option>
+<option>moroccan dirham (MAD)</option>
+<option>new taiwan dollar (TWD)</option>
+<option>new zealand dollar (NZD)</option>
+<option>norwegian krone (NOK)</option>
+<option>philippine peso (PHP)</option>
+<option>polish zloty (PLN)</option>
+<option>romanian leu (RON)</option>
+<option>russian ruble (RUB)</option>
+<option>saudi riyal (SAR)</option>
+<option>serbian dinar (RSD)</option>
+<option>singapore dollar (SGD)</option>
+<option>south african rand (ZAR)</option>
+<option>south korean won (KRW)</option>
+<option>swedish krona (SEK)</option>
+<option>swiss franc (CHF)</option>
+<option>tajikistani somoni (TJS)</option>
+<option>thai baht (THB)</option>
+<option>tunisian dinar (TND)</option>
+<option>turkish lira (TRY)</option>
+<option>turkmenistan manat (TMT)</option>
+<option>united arab emirates dirham (AED)</option>
+<option>uzbekistani som (UZS)</option>
+<option>vietnamese dong (VND)</option>

@@ -1,0 +1,160 @@
+
+
+.loader-wrapper {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	z-index: 9999;
+	top: 0;
+	left: 0;
+	background: var(--light);
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.loader {
+  position: relative;
+  margin: 0px auto;
+  width: 15vh;
+  width: calc(var(--vh, 1vh) * 15);
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader_logo {
+	background: url(../img/minimal_logo_dark.svg) no-repeat center center / contain;
+	width: 45%;
+	height: 45%;
+	display: block;
+	position: absolute;
+	animation: transform 6s linear infinite;
+	-webkit-animation: transform 6s linear infinite;
+	-o-animation: transform 6s linear infinite;
+	-moz-animation: transform 6s linear infinite;
+	-ms-animation: transform 6s linear infinite;
+}
+@keyframes  transform {  
+	0% {
+	 	opacity: 1;
+	}
+	50% {
+		opacity: 1;
+	}
+	70% {
+		opacity: 0;
+	}
+	80%, 90% {
+	 	opacity: 1;
+	}
+}
+
+.loader:before {
+  content: '';
+  display: block;
+  padding-top: 100%;
+}
+
+.circular {
+  -webkit-animation: rotate 2s linear infinite;
+  animation: rotate 2s linear infinite;
+  height: 100%;
+  -webkit-transform-origin: center center;
+  -ms-transform-origin: center center;
+  transform-origin: center center;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.path {
+  stroke-dasharray: 1, 200;
+  stroke-dashoffset: 0;
+  -webkit-animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
+  animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
+  stroke-linecap: round;
+}
+
+@-webkit-keyframes 
+rotate {  100% {
+ -webkit-transform: rotate(360deg);
+ transform: rotate(360deg);
+}
+}
+
+@keyframes 
+rotate {  100% {
+ -webkit-transform: rotate(360deg);
+ transform: rotate(360deg);
+}
+}
+
+@keyframes 
+dash {  0% {
+ stroke-dasharray: 20;
+}
+ 50% {
+ stroke-dasharray: 20;
+}
+ 100% {
+ stroke-dasharray: 20;
+}
+}
+
+@-webkit-keyframes 
+color {  100%, 0% {
+ stroke: var(--dark);
+}
+ 40% {
+ stroke: var(--dark);
+}
+ 66% {
+ stroke: var(--light);
+}
+ 80%, 90% {
+ stroke: var(--dark);
+}
+}
+
+@keyframes 
+color {  100%, 0% {
+ stroke: var(--dark);
+}
+ 40% {
+ stroke: var(--dark);
+}
+ 66% {
+ stroke: var(--light);
+}
+ 80%, 90% {
+ stroke: var(--dark);
+}
+}
+
+@media (prefers-color-scheme: dark) {
+	.loader_logo {
+		background: url(../img/minimal_logo_light.svg) no-repeat center center / contain;
+		width: 45%;
+		height: 45%;
+		display: block;
+		position: absolute;
+		animation: transform 6s linear infinite;
+		-webkit-animation: transform 6s linear infinite;
+		-o-animation: transform 6s linear infinite;
+		-moz-animation: transform 6s linear infinite;
+		-ms-animation: transform 6s linear infinite;
+	}
+}	

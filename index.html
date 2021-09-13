@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- MADE BY HRYNEVYCH ROMAN -->
+
+<head>
+    <link rel="icon" href="img/minimal_logo_dark.svg" id="light-scheme-icon">
+    <link rel="icon" href="img/minimal_logo_light.svg" id="dark-scheme-icon">
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link rel="stylesheet" href="css/loader.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/select2.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.8.21/jquery-ui.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
+    <script src="js/drag_mobile.js"></script>
+    <title>Cenvert</title>
+</head>
+
+<body id="body" class="disabled_selection">
+
+
+    <div class="loader-wrapper">
+        <div class="loader">
+            <svg class="circular" viewBox="25 25 50 50">
+            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+          </svg>
+            <div class="loader_logo dark"></div>
+            <div class="loader_logo light"></div>
+        </div>
+    </div>
+
+    <script>
+        $(window).on("load", function() {
+            $(".loader-wrapper").fadeOut("slow");
+        });
+        lightSchemeIcon = document.querySelector('link#light-scheme-icon');
+        darkSchemeIcon = document.querySelector('link#dark-scheme-icon');
+
+        function onUpdate() {
+            if (matcher.matches) {
+                lightSchemeIcon.remove();
+                document.head.append(darkSchemeIcon);
+            } else {
+                document.head.append(lightSchemeIcon);
+                darkSchemeIcon.remove();
+            }
+        }
+        matcher = window.matchMedia('(prefers-color-scheme: dark)');
+        matcher.addListener(onUpdate);
+        onUpdate();
+    </script>
+
+
+    <div id="demo"></div>
+    <div id="start">
+        <div class="container">
+            <div id="header">
+                <a href="#" class="title">
+                    <img src="img/logo.svg" draggable="false" alt="">
+                    <!-- Cenvert -->
+                </a>
+                <div class="menu">
+                    <ul class="light">
+                        <li>
+                            <a href="https://www.facebook.com/"><img src="img/social_media/facebook.svg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/"><img src="img/social_media/instagram.svg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="https://www.telegram.org/"><img src="img/social_media/telegram.svg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/"><img src="img/social_media/twitter.svg" alt=""></a>
+                        </li>
+                    </ul>
+                    <ul class="dark">
+                        <li>
+                            <a href="https://www.facebook.com/"><img src="img/social_media/facebook_dark.svg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/"><img src="img/social_media/instagram_dark.svg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="https://www.telegram.org/"><img src="img/social_media/telegram_dark.svg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/"><img src="img/social_media/twitter_dark.svg" alt=""></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="cont">
+            <form action="" class="disabled_selection">
+                <ul class="optionBox">
+                    <li class="drag">
+                        <span class="remove"></span>
+                        <img src="img/flags/euro (EUR).svg" alt="" draggable="false">
+                        <input type="input" type="text" class="currencyTextBox" name="EUR" onkeyup="this.value = minmax(this.value, 0, 999999999.99)" maxlength="12" onfocus="this.value = ''" dir="rtl">
+                    </li>
+                    <li class="drag">
+                        <span class="remove"></span>
+                        <img src="img/flags/pound sterling (GBP).svg" alt="" draggable="false">
+                        <input type="input" type="text" class="currencyTextBox" name="GBP" onkeyup="this.value = minmax(this.value, 0, 999999999.99)" maxlength="12" dir="rtl">
+                    </li>
+                    <li class="drag">
+                        <span class="remove"></span>
+                        <img src="img/flags/united states dollar (USD).svg" alt="" draggable="false">
+                        <input type="input" type="text" class="currencyTextBox" name="USD" onkeyup="this.value = minmax(this.value, 0, 999999999.99)" maxlength="12" dir="rtl">
+                    </li>
+                    <li class="drag">
+                        <span class="remove"></span>
+                        <img src="img/flags/chinese yuan (CNY).svg" alt="" draggable="false">
+                        <input type="input" type="text" class="currencyTextBox" name="CNY" onkeyup="this.value = minmax(this.value, 0, 999999999.99)" maxlength="12" dir="rtl">
+                    </li>
+                    <li class="drag">
+                        <span class="remove"></span>
+                        <img src="img/flags/ukrainian hryvnia (UAH).svg" alt="" draggable="false">
+                        <input type="input" type="text" class="currencyTextBox" name="UAH" onkeyup="this.value = minmax(this.value, 0, 999999999.99)" maxlength="12" dir="rtl">
+                    </li>
+                </ul>
+            </form>
+            <span class="add" onclick="sortList()"></span>
+        </div>
+    </div>
+    <div id="mask">
+        <div id="sort">
+            <select id='selUser'>
+                <option>algerian dinar (DZD)</option>
+                <option>armenian dram (AMD)</option>
+                <option>australian dollar (AUD)</option>
+                <option>azerbaijani manat (AZN)</option>
+                <option>bangladeshi taka (BDT)</option>
+                <option>belarusian ruble (BYN)</option>
+                <option>brazilian real (BRL)</option>
+                <option>bulgarian lev (BGN)</option>
+                <option>canadian dollar (CAD)</option>
+                <option>czech koruna (CZK)</option>
+                <option>croatian kuna (HRK)</option>
+                <option>denmark krone (DKK)</option>
+                <option>egyptian pound (EGP)</option>
+                <option>georgian lari (GEL)</option>
+                <option>ghanaian cedi (GHS)</option>
+                <option>hong kong dollar (HKD)</option>
+                <option>hungarian forint (HUF)</option>
+                <option>indian rupee (INR)</option>
+                <option>indonesian rupiah (IDR)</option>
+                <option>iranian rial (IRR)</option>
+                <option>iraqi dinar (IQD)</option>
+                <option>israeli new shekel (ILS)</option>
+                <option>japanese yen (JPY)</option>
+                <option>kazakhstani tenge (KZT)</option>
+                <option>kyrgyzstani som (KGS)</option>
+                <option>lebanese pound (LBP)</option>
+                <option>libyan dinar (LYD)</option>
+                <option>malaysian ringgit (MYR)</option>
+                <option>mexican peso (MXN)</option>
+                <option>moldovan leu (MDL)</option>
+                <option>moroccan dirham (MAD)</option>
+                <option>new taiwan dollar (TWD)</option>
+                <option>new zealand dollar (NZD)</option>
+                <option>norwegian krone (NOK)</option>
+                <option>philippine peso (PHP)</option>
+                <option>polish zloty (PLN)</option>
+                <option>romanian leu (RON)</option>
+                <option>russian ruble (RUB)</option>
+                <option>saudi riyal (SAR)</option>
+                <option>serbian dinar (RSD)</option>
+                <option>singapore dollar (SGD)</option>
+                <option>south african rand (ZAR)</option>
+                <option>south korean won (KRW)</option>
+                <option>swedish krona (SEK)</option>
+                <option>swiss franc (CHF)</option>
+                <option>tajikistani somoni (TJS)</option>
+                <option>thai baht (THB)</option>
+                <option>tunisian dinar (TND)</option>
+                <option>turkish lira (TRY)</option>
+                <option>turkmenistan manat (TMT)</option>
+                <option>united arab emirates dirham (AED)</option>
+                <option>uzbekistani som (UZS)</option>
+                <option>vietnamese dong (VND)</option>
+            </select>
+            <div class="add_country">
+                <input type='button' value='' id='but_read'>
+            </div>
+        </div>
+    </div>
+    </div>
+    <footer id="footer">
+        <span class="text">
+            © Cenvert 2021 [Роман Гриневич]
+        </span>
+    </footer>
+    <script>
+        function test(AcurElem) {
+            function getJSON(url) {
+                let xhr = new XMLHttpRequest();
+
+                xhr.open('GET', url, false);
+                xhr.send();
+
+                if (xhr.status == 200) return xhr.responseText;
+            }
+
+            let parsedData = JSON.parse(getJSON("https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json"));
+
+            let data = [];
+            let data2 = [];
+            for (let i = 0; i < parsedData.length; i++) {
+                data.push(parsedData[i]["cc"]);
+                data2.push(parsedData[i]["rate"]);
+            }
+
+            let curElem = Array.from(AcurElem);
+            let bufName = curElem[0].name;
+            let bufValue = curElem[0].value;
+            let bufRate;
+
+            for (let i = 0; i < data.length; i++) {
+                if (curElem[0].name == data[i]) {
+                    bufRate = data2[i];
+                    break;
+                }
+            }
+
+            if (bufName != "UAH") {
+                let ukr = document.getElementsByName("UAH");
+                ukr.forEach((current, index) => {
+                    ukr[index].value = (parseFloat(bufValue) * parseFloat(bufRate)).toFixed(2).toString();
+                });
+
+                for (let i = 0; i < data.length; i++) {
+                    let cur = document.getElementsByName(data[i]);
+                    cur.forEach((current, index) => {
+                        if (current.name != bufName) {
+                            if (parseFloat(bufValue) > 0.0) {
+                                cur[index].value = (parseFloat(bufValue) * parseFloat(bufRate) / parseFloat(data2[i])).toFixed(2).toString();
+                            } else {
+                                cur[index].value = "";
+                                document.getElementsByName("UAH").forEach((current, index) => {
+                                    ukr[index].value = "";
+                                });
+                            }
+                        }
+                    });
+                }
+            } else {
+                for (let i = 0; i < data.length; i++) {
+                    let cur = document.getElementsByName(data[i]);
+                    cur.forEach((current, index) => {
+                        if (current.name != bufName) {
+                            if (parseFloat(bufValue) > 0.0) {
+                                cur[index].value = (parseFloat(bufValue) / parseFloat(data2[i])).toFixed(2).toString();
+                            } else {
+                                cur[index].value = "";
+                            }
+                        }
+                    });
+                }
+            }
+        }
+
+        $(document).ready(function() {
+            var height = $(document).height();
+            document.getElementById('demo').style.minHeight = height + "px";
+
+            $("#selUser").select2();
+
+            $('#but_read').click(function() {
+                var username = $('#selUser option:selected').text();
+
+                // take only 3 letters for search of currency
+                let currency = username;
+                currency = currency.substring(currency.length - 4, currency.length - 1);
+                $('#selUser option:selected').remove();
+
+                var x = $("li.drag").length;
+
+                (function() {
+
+                    function currency_new(numberOfCurrency, divID) {
+                        var chosenDiv = document.getElementById(divID);
+                        chosenDiv.innerHTML = "";
+
+                        function randomFrom(array) {
+                            return array[Math.floor(Math.random() * array.length)];
+                        }
+                        var text = "";
+                        let i;
+                        for (i = 0; i < numberOfCurrency; i++) {
+                            bigRange = Array.apply(null, Array(100)).map(function(_, i) {
+                                return i;
+                            });
+                            smallRange = Array.apply(null, Array(3)).map(function(_, i) {
+                                return i;
+                            });
+                            tenRange = Array.apply(null, Array(5)).map(function(_, i) {
+                                return i;
+                            });
+                            CurTwinkleStage = Math.floor(Math.random() * 12) + 1;
+                            height = Math.floor(Math.random() * 10) + 15;
+
+                            var top = randomFrom(bigRange);
+                            var rotate = Math.floor(Math.random() * 360);
+                            var right = randomFrom(bigRange) + 2;
+                            var opacity = Math.floor(Math.random() * 40) + 20;
+
+                            text += "<img src='img/currency/" + CurTwinkleStage + ".svg'";
+                            text += "style='position: absolute; height: " + height + "px; width: " + height + "px;";
+                            text += "top: " + top + "%; right: " + right + "%; opacity: 0." + opacity + ";";
+                            text += "transform: rotateZ(" + rotate + "deg);'";
+                            text += " alt=''>";
+
+                        }
+                        chosenDiv.innerHTML += text;
+                    }
+
+                    var start_height = $('#start').height();
+                    var buffer = height;
+
+                    if (start_height > height) {
+                        buffer = start_height;
+                    }
+
+                    document.getElementById('demo').style.height = buffer + "px";
+
+                    var demo_height = $('#demo').height();
+                    document.getElementById('start').style.marginTop = -demo_height + "px";
+
+                    if (buffer / 10 > 250) {
+                        buffer = 2500;
+                    }
+
+                    if (x > 6) {
+                        currency_new(buffer / 10, "demo");
+                    }
+
+                })();
+
+
+                $('.drag:last').after('<li class="drag">\n<span class="remove"></span>\n<img src="img/flags/' + username + '.svg" alt="" draggable="false">\n<input type="input" type="number" class="currencyTextBox" name=' + currency + ' onkeyup="this.value = minmax(this.value, 0, 999999999.99)" maxlength="12"	 dir="rtl">\n</li>');
+                // clear value
+                $('.currencyTextBox').click(function() {
+                    cur = $(this);
+                    $(this).val("");
+                });
+                $('#mask').hide();
+
+                $(".currencyTextBox").inputFilter(function(value) {
+                    test(cur);
+                    return /^-?\d*[.]?\d{0,2}$/.test(value);
+                });
+                $('.drag:last').draggable();
+                if (x == 9) {
+                    $('.add').hide();
+                }
+                test(cur);
+
+
+            });
+            $('.add').click(function() {
+                $('#mask').show();
+            });
+
+            $('#mask').click(function() {
+                $('#mask').hide();
+            });
+            $("#sort").click(function(e) {
+                e.stopPropagation();
+            });
+
+            $('.optionBox').on('click', '.remove', function() {
+                var x = $("li.drag").length;
+                if (x < 3) {
+                    alert("You can’t leave only one element");
+                    return;
+                }
+
+                var url = $(this).parent().find('img').attr('src').replace('img/flags/', '').replace('.svg', '');
+                $("#selUser").append("<option>" + url + "</option>");
+
+
+
+                $(this).parent().remove();
+                $('.add').show();
+
+                var li_height = $('li.drag:last').height();
+
+                var demo_height = $('#demo').height();
+
+                document.getElementById('demo').style.height = demo_height - li_height + "px";
+                var demo_heightt = $('#demo').height();
+                document.getElementById('start').style.marginTop = -demo_heightt + "px";
+
+                var start_height = $('#start').height();
+                var buffer = height;
+
+                if (buffer / 10 > 250) {
+                    buffer = 2500;
+                }
+
+                var y = $("li.drag").length;
+
+                if (y > 6) {
+                    currency_new(buffer / 10, "demo");
+                }
+
+            });
+        });
+    </script>
+</body>
+<!-- SORT LIST IN ALPHABETIC -->
+<script src="js/list_sort.js"></script>
+<!-- DRAGGABLE SCRIPT -->
+<script src="js/draggable.js"></script>
+<script>
+    $('.drag').draggable();
+</script>
+<!-- NORMAL HIGHT FOR MOBILE -->
+<script>
+    let vh = screen.height * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+</script>
+<!-- MAIN FRAMEWORKS -->
+<script src="js/random_bg.js"></script>
+<script src="js/input_js.js"></script>
+<!-- INPUT FONT SIZE AUTO SHRINKING AND FILTERING INPUTING -->
+<script>
+    var cur;
+    $(function() {
+        $('.currencyTextBox').keyup(function() {
+            shrinkToFill(this, 42, 700, "SF_D, serif");
+        })
+    });
+    $(".currencyTextBox").inputFilter(function(value) {
+        test(cur);
+        return /^-?\d*[.]?\d{0,2}$/.test(value);
+    });
+
+    $('.currencyTextBox').click(function() {
+        cur = $(this);
+        $(this).val("");
+    });
+</script>
+
+</html>

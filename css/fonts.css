@@ -1,0 +1,76 @@
+@font-face{
+	src: url(../fonts/SFUIDisplay-Heavy.ttf);
+	font-family: SF_D;
+	font-weight: 900;
+}
+@font-face{
+	src: url(../fonts/SFUIDisplay-Black.ttf);
+	font-family: SF_D;
+	font-weight: 800;
+}
+@font-face{
+	src: url(../fonts/SFUIDisplay-Bold.ttf);
+	font-family: SF_D;
+	font-weight: 700;
+}
+@font-face{
+	src: url(../fonts/SFUIDisplay-Semibold.ttf);
+	font-family: SF_D;
+	font-weight: 600;
+}
+@font-face{
+	src: url(../fonts/SFUIDisplay-Medium.ttf);
+	font-family: SF_D;
+	font-weight: 500;
+}
+@font-face{
+	src: url(../fonts/SFUIDisplay-Regular.ttf);
+	font-family: SF_D;
+	font-weight: 400;
+}
+@font-face{
+	src: url(../fonts/SFUIDisplay-Light.ttf);
+	font-family: SF_D;
+	font-weight: 300;
+}
+@font-face{
+	src: url(../fonts/SFUIDisplay-Ultralight.ttf);
+	font-family: SF_D;
+	font-weight: 200;
+}
+@font-face{
+	src: url(../fonts/SFUIDisplay-Thin.ttf);
+	font-family: SF_D;
+	font-weight: 100;
+}
+
+
+/*SFUI_TEXT*/
+
+
+
+@font-face{
+	src: url(../fonts/SFUIText-Heavy.ttf);
+	font-family: SF_T;
+	font-weight: 900;
+}
+@font-face{
+	src: url(../fonts/SFUIText-Bold.ttf);
+	font-family: SF_T;
+	font-weight: 700;
+}
+@font-face{
+	src: url(../fonts/SFUIText-Medium.ttf);
+	font-family: SF_T;
+	font-weight: 500;
+}
+@font-face{
+	src: url(../fonts/SFUIText-Regular.ttf);
+	font-family: SF_T;
+	font-weight: 400;
+}
+@font-face{
+	src: url(../fonts/SFUIText-Light.ttf);
+	font-family: SF_T;
+	font-weight: 300;
+}
